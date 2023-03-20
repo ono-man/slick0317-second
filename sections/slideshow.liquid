@@ -25,15 +25,6 @@
   {%- endstyle -%}
 {%- endif -%}
 
-<ul class="slider">
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-  <li>{{ 'product-1' | placeholder_svg_tag }}</li>
-<!--/slider--></ul>
-
 <slideshow-component
   class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
   role="region"
