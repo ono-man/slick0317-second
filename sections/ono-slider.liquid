@@ -1,0 +1,54 @@
+<h1 class="slider_title">{{ section.settings.slider_title }}</h1>
+
+<div class="slider">   
+         {%- for block in section.blocks -%}
+
+      <div>
+        {%- if block.settings.image != blank -%}
+	        <img src="{{ block.settings.image | img_url: '2000x2000' }}" loading="lazy" alt="">
+        {%- else -%}
+	        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+      {%- endfor -%}
+</div>
+
+{% schema %}
+    {
+        "name": "スリックスライダー",
+        "class": "slide-wrap",
+        "settings": [
+            {
+                "type": "text",
+                "id": "slider_title",
+                "default": "タイトルが入ります。",
+                "label": "タイトル"
+              }
+        ],
+        "blocks": [
+            {
+                "type": "slide",
+                "name": "画像スライド",
+                "limit": 10,
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "画像"
+                    }
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "name": "スライダー画像",
+                "category": "画像",
+                "settings": {
+                    "auto": false,
+                    "speed": 5
+                }
+            }
+        ]
+    }
+{% endschema %}
