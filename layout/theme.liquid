@@ -229,7 +229,10 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <!--AssetsディレクトリにあるCSSファイルのlinkタグを生成する-->
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
     {{ 'slider.css' | asset_url | stylesheet_tag }}
+
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
